@@ -35,7 +35,7 @@ merge (x:xs)(y:ys) = if(x<y)
 mergeSort[] = []
 mergeSort[x] = [x]
 mergeSort xs = let(front, back) = split xs 
-                in merge(mergeSort front) (mergeSort back)
+   in merge(mergeSort front) (mergeSort back)
 
 --Test
 -- (1,True) :: Num a => (a, Bool)
@@ -70,9 +70,8 @@ mergeSort xs = let(front, back) = split xs
 -- (1,2)
 -- show (Pair e1 e2) = "(" ++ (show e1) ++ "," ++ (show e2) ++ ")"
 
-
-                data Tree a = Node a [Tree a]
-    deriving Show
+data Tree a = Node a [Tree a]
+   deriving Show
 t1 = Node 1 [Node 2 [Node 5 [Node 6 []]], Node 3 [], Node 2 [Node 4[]]]
 
 
@@ -85,7 +84,7 @@ t1 = Node 1 [Node 2 [Node 5 [Node 6 []]], Node 3 [], Node 2 [Node 4[]]]
 sndlayer (Node _ xs) = sndlayer' xs
 
 sndlayer' [] = []
-sndlayer' (x:xs) = sndlayer'' x ++ sndlayer' xs
+sndlayer' (x:xs) = sndlayer'' x ++ sndlayer' xsn
 
 sndlayer'' (Node x _) = [x]
 
